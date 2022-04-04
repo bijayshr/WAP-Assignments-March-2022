@@ -1,0 +1,12 @@
+.answer{
+    color: green;
+    font-weight: bold;
+}
+
+ol {
+    font-weight: bold;
+}
+ul>li {
+    margin:5px;
+    list-style: square;
+}
