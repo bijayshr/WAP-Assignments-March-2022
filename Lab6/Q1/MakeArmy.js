@@ -23,8 +23,10 @@ function makeArmyFix () {
     }
     return shooters;
 }
-let army = makeArmy() ;
-console.dir(army[0]);
+
+//Note: Please Comment the following two lines down below, to check the fix
+// let army = makeArmy() ;
+// console.dir(army[0]);
 
 //#Fixing the Code
 let armyFix = makeArmyFix();
