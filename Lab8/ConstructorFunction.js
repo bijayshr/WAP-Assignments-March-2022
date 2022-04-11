@@ -1,39 +1,28 @@
-function Student(firstName, lastName){
-    this.firstName = firstName;
+function Student(firstName, lastName, grades = []) { this.firstName = firstName;
     this.lastName = lastName;
+    this.grades = grades;
 }
-Student.prototype.grades = [];
 
-Student.prototype.inputNewGrade = function(newGrade){
+Student.prototype.inputNewGrade = function (newGrade) {
     this.grades.push(newGrade);
-};
+}
+Student.prototype.computeAverageGrade = function () {
+    return this.grades.reduce(
+        (sum, current, index, array) => sum + current / array.length, 0);
+}
+const stu1 = new Student('John', 'Smith');
+stu1.inputNewGrade(88);
+stu1.inputNewGrade(98);
+stu1.inputNewGrade(86);
+stu1.inputNewGrade(80);
+const stu2 = new Student('John2', 'Smith2');
+stu2.inputNewGrade(85);
+stu2.inputNewGrade(95);
+stu2.inputNewGrade(85);
+stu2.inputNewGrade(70);
+const students = [stu1, stu2];
 
-Student.prototype.computeAverageGrade = function (){
+const result = students.reduce(
+    (average, stu, index, array) => average + stu.computeAverageGrade() / array.length, 0);
 
-    let grade =  this.grades.reduce((acc, grade)=> acc+=grade, 0);
-    return grade/this.grades.length;
-
-    //## ALTERNATIVE WAY TO GET AVERAGE GRADE
-    // let grade = 0;
-    // let len = this.grades.length;
-    // for(let i=0; i<len; i++){
-    //     grade +=this.grades[i];
-    // };
-    // return grade/this.grades.length;
-};
-
-let stu1 = new Student('Ryan', 'Gosling');
-stu1.inputNewGrade(4);
-stu1.inputNewGrade(4);
-stu1.inputNewGrade(4);
-stu1.inputNewGrade(4);
-stu1.inputNewGrade(4);
-console.dir(` ${stu1.computeAverageGrade()}`);
-
-let stu2 = new Student('Josh', 'Bloch');
-stu2.inputNewGrade(4)
-stu2.inputNewGrade(3)
-stu2.inputNewGrade(3)
-stu2.inputNewGrade(4)
-
-console.dir(`${stu2.computeAverageGrade()}`);
+console.log(result);
