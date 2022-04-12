@@ -18,4 +18,4 @@ dns.lookup('www.miu.edu', options,
 dns.resolve4('www.miu.edu', options, (err, address) => {
     if(err) throw err;
     console.log('address: %j', address);
-})
+});
