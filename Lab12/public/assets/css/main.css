@@ -1,0 +1,55 @@
+div {
+    margin-bottom: 15px;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.38);
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+    border: 1px solid #ffffff;
+}
+
+#wrapper{
+    border: 1px solid #ffffff;
+}
+
+ul > li{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    justify-content: center;
+    margin: 20px;
+}
+
+.button{
+    background-color: #00ffe1;
+    color: black;
+    max-width: 100px;
+    max-height:200px;
+}
+.button:hover{
+    background-color: #00ff8c;
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+    color: red;
+}
+
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
