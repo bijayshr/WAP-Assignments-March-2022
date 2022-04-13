@@ -17,8 +17,7 @@ router.get('/product',
         res.sendFile(path.join(__dirname, '..', 'views', 'addProduct.html'));
     });
 
-router.post('/product',
-    (        req,
+router.post('/product', (req,
         res,
         next)=>{
         console.log('I am posting')

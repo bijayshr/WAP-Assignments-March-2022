@@ -20,34 +20,48 @@ app.use(productRouter);
 app.use(userRouter);
 
 app.use('/go-user', (req, res, next)=>{
-    res.redirect('/user');
+    if(req!== null) {
+        res.redirect('/user');
+    }else{
+        throw new LogErrors('Error Occured');
+    }
 });
 
 app.use('/go-product', (req, res, next)=>{
-    res.redirect('/product');
+    if(req !== null) {
+        res.redirect('/product');
+    }else{
+        throw new LogErrors('Error Occured');
+    }
 });
 
 app.use('/home', (req, res, next)=>{
     console.debug('~~~~~~~~~ Welcome to Lab 12 Assignment ~~~~~~~~~~~');
+    if(req !== null){
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
+    }else{
+        throw new LogErrors('Error Occured');
+    }
 });
 
-
-app.use((req, res, next) => {
+app.use((req,
+         res, next) => {
     res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
 })
 
-function clientErrorHandler(err, req, res, next){
-    if(req.xhr){
-        res.status(500).send({
-            error: 'Something Went Wrong!'
-        })
-    }else{
-        next(err);
-    }
+app.use((err,
+         req,
+         res, next) => {
+    logErrors(err);
+})
+
+function LogErrors (err, req, res, next) {
+    console.log('----------->');
+    console.error(err.stack);
+    next(err);
 }
 
-app.use(clientErrorHandler);
+
 
 app.listen(process.env.PORT);
 console.debug('Server listening on port ' + process.env.PORT);
