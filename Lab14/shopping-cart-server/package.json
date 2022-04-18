@@ -4,7 +4,7 @@
     "description": "This is a Shopping Cart Server for Lab 14 Assignment",
     "main": "app.js",
     "scripts": {
-        "start": "nodemon app.js"
+        "start": "PORT=3000 ENV=DEVELOPMENT nodemon app.js"
     },
     "keywords": [],
     "author": "Bijay Shrestha",

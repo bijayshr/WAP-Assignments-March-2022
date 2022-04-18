@@ -22,4 +22,4 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(3000, () => console.log('listening to %s...', 3000));
+app.listen(process.env.PORT, () => console.log('listening to %s...', process.env.PORT));
