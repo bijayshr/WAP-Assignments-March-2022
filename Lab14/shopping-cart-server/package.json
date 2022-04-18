@@ -1,0 +1,16 @@
+{
+    "name": "shopping-cart-server",
+    "version": "1.0.0",
+    "description": "This is a Shopping Cart Server for Lab 14 Assignment",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "Bijay Shrestha",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.3"
+    }
+}
