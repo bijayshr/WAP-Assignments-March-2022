@@ -52,7 +52,7 @@ function renderBook(prod) {
     const actions = document.createElement('p');
     const updateBtn = document.createElement('a');
     updateBtn.classList = 'btn btn-secondary';
-    updateBtn.textContent = 'UPDATE';
+    updateBtn.textContent = 'Update';
     updateBtn.addEventListener('click', function(event) {
         event.preventDefault();
         document.getElementById('product-heading').textContent = 'Edit Product';
@@ -65,7 +65,7 @@ function renderBook(prod) {
 
     const deleteBtn = document.createElement('a');
     deleteBtn.classList = 'btn btn-secondary';
-    deleteBtn.textContent = 'DELETE';
+    deleteBtn.textContent = 'Delete';
     deleteBtn.addEventListener('click', function(event) {
         event.preventDefault();
 

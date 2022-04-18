@@ -28,7 +28,13 @@ body {
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
+.container-fluid{
+    background:#0d6efd;
+}
 
+.navbar{
+    background: #0d6efd;
+}
 
 /* Carousel base class */
 
